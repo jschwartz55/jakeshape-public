@@ -14,18 +14,14 @@ export const getMeetScoutingReport = async (
   });
 
   if (response == null) {
-    response = await API.get(
-      'getMeetScoutingReport',
-      '/api/get-meet-scouting-report',
-      {
-        headers: {
-          'x-api-key': process.env.REACT_APP_API_KEY,
-        },
-        queryStringParameters: {
-          liftingCastMeetId: data.meetID,
-        },
-      }
-    );
+    response = await API.get('jakeshapeAPI', '/api/get-meet-scouting-report', {
+      headers: {
+        'x-api-key': process.env.REACT_APP_API_KEY,
+      },
+      queryStringParameters: {
+        liftingCastMeetId: data.meetID,
+      },
+    });
   }
   return response;
 };
