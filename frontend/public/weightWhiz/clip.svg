@@ -1,0 +1,9 @@
+<svg width="12" height="48" viewBox="0 0 12 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_110_43" fill="white">
+<path d="M4 5H8V26H4V5Z"/>
+</mask>
+<path d="M4 5H8V26H4V5Z" fill="#CACACA"/>
+<path d="M4 5H8H4ZM8 26H4H8ZM3 26V5H5V26H3ZM9 5V26H7V5H9Z" fill="black" mask="url(#path-1-inside-1_110_43)"/>
+<rect x="0.5" y="13" width="11" height="22" rx="2.5" fill="#CACACA" stroke="black"/>
+<circle cx="6" cy="3" r="2.5" fill="black" stroke="black"/>
+</svg>

@@ -1,0 +1,202 @@
+// Import Bootstrap's SCSS files to access its variables and mixins
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+$eucalyptus: #50d5b7;
+$offwhite: #dbe9ea;
+$viridian: #067D68;
+$space: #464646;
+
+
+.font-jockey {
+    font-family: 'Jockey One', sans-serif !important;
+    color: white;
+}
+
+.offcanvas-font{
+    font-size: 1.4rem;
+}
+
+.offcanvas-nav :hover {
+    color: $eucalyptus !important;
+}
+
+.nav-dropdown-style .dropdown-menu{
+    background-color: $space !important;
+    border-color: $space !important;
+}
+
+.nav-dropdown-style .dropdown-menu :hover{
+    color: $eucalyptus !important;
+    background-color: $space !important;
+}
+
+.nav-dropdown-style .dropdown-item {
+    color: white;
+}
+
+.nav-dropdown-style .dropdown-item :hover{
+    color: $eucalyptus !important;
+    background-color: $space !important;
+}
+
+.nav-dropdown-style .dropdown-item.active {
+    background-color: transparent !important;
+}
+
+body {
+    background-image: linear-gradient(135deg, #50D5B7 0%, #067D68 100%);
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0; 
+}
+
+.homepage-header {
+    @extend .font-jockey;
+    font-size: 10vw;
+}
+
+.homepage-text {
+    @extend .font-jockey;
+    font-size: calc(max(3vw, 18px));
+}
+
+.white-button {
+    @extend .font-jockey;
+    font-size: 1rem !important;
+    background-color: white !important;
+    border-color: white !important;
+    color: $viridian !important; 
+    width: 11rem;
+}
+
+.white-button:hover {
+    background-color: $offwhite !important;
+    border-color: $offwhite !important;
+}
+
+.green-button {
+    @extend .font-jockey;
+    background-color: $eucalyptus !important;
+    border-color: $eucalyptus !important;
+    color: white !important;
+    &:disabled {
+        background-color: $viridian !important;
+        border-color: $viridian !important;
+    }
+}
+
+.white-text {
+    color: white !important;
+}
+
+.dark-text {
+    color: $space !important;
+}
+
+
+.green-button:hover {
+    background-color: $viridian !important;
+    border-color: $viridian !important;
+}
+
+.tool-card {
+    background-color: $viridian !important;
+    border-color: $viridian !important;
+    border-radius: 20px !important;  
+    max-width: 1000px;
+}
+
+.tool-field-name {
+    @extend .font-jockey;
+    font-size: 1rem;
+}
+
+.arrow-icon:hover {
+    color: $eucalyptus !important;
+}
+
+.icon-link:hover {
+    color: $eucalyptus !important;
+    cursor: pointer !important;
+}
+
+.small-input {
+    max-width: calc(min(70vw, 50%));
+}
+
+.x-small-input {
+    max-width: calc(max(10vw, 80px));
+}
+
+.unit-switch {
+    justify-content: center;
+}
+
+.unit-switch .MuiSwitch-thumb {
+    background-color: white; 
+  }
+  
+.unit-switch .MuiSwitch-track {
+    background-color: white !important;
+  }
+
+.unit-switch .MuiSwitch-switchBase.Mui-checked:hover {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.white-icon {
+    color: white !important;
+}
+
+.white-icon:hover {
+    color: $eucalyptus !important;
+}
+
+.contact-input {
+    max-width: 700px;
+}
+
+.about-image {
+    max-height: 450px;
+}
+
+.game-settings-radio .form-check-input:checked {
+    background-color: $eucalyptus !important; 
+    border-color: $eucalyptus !important;
+}
+
+.game-settings-radio {
+    .form-check-input:focus {
+      box-shadow: 0 0 0 0.25rem rgba(80, 213, 183, 0.25) !important;
+    }
+  }
+  
+
+.large-input-text {
+    font-size: x-large !important;
+}
+
+.button-link {
+    color: $offwhite !important;
+}
+
+.button-link:hover {
+    color: $eucalyptus !important;
+}
+
+$custom-colors: (
+    "eucalyptus": $eucalyptus,
+    "offwhite": $offwhite,
+    "viridian": $viridian,
+    "space": $space,
+    "white": white,
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
