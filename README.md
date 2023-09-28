@@ -28,8 +28,8 @@ The lambda function will continue running in the background if a timeout occurs.
 
 When a request is made to get a prediction, getPerformancePrediction is called. The predictions are made by an XGBoost model. You can see details in the /backend/predictionModels folder. getPerformancePrediction checks the open powerlifting database for the open powerlifting ID. If found, all previous meets for that lifter are retrieved. Some feature engineering is performed and sent to the Sagemaker prediction endpoints. The predictions are then returned.
 
-#### Power Percentiles
-##### [Get Power Percentiles](/backend/api/getPowerPercentiles.py)
+#### Power Percentile
+##### [Get Power Percentile](/backend/api/getPowerPercentile.py)
 
 ![image](https://github.com/jschwartz55/jakeshape-public/assets/78443999/f48cf8a5-e89c-44b5-babd-754346cd4e5c)
 
@@ -38,6 +38,7 @@ When a request is made to get a power percentile, a parquet file is read from s3
 ### Games
 #### Weight Whiz
 ##### [Get Weight Whiz Leaderboards](/backend/api/getWeightWhizLeaderboards.py)
+##### [Submit Weight Whiz Score](/backend/api/submitWeightWhizScore.py)
 
 ![image](https://github.com/jschwartz55/jakeshape-public/assets/78443999/f0d320a1-3fbe-45d9-bb83-810a33c21d78)
 
@@ -51,3 +52,11 @@ Weight Whiz retrieves the leaderboards for each game mode upon page load. A data
 ![image](https://github.com/jschwartz55/jakeshape-public/assets/78443999/357271a2-7b8d-4ea3-a4cb-ed1fa790f1a6)
 
 Every month cloud formation triggers the getOpenPowerliftingData function. getOpenPowerliftingData retrieves the CSV file from openpowerlifing.org containing all data on Open Powerlifting. The file is processed and stored as an open-powerlifting.csv file in an s3 bucket. The file is also modified and saved as a parquet file for the Performance Predictor tool. The creation of a new file triggers the importOpenPowerliftingDataToDynamoDB function. This will trigger DynamoDB to transform the open-powerlifting.csv to a DynamoDB table. ImportOpenPowerliftingDataToDynamoDB will then activate an EventBridge scheduler which will trigger 20 minutes later (enough time for the CSV file to be uploaded to Dynamo DB. The EventBridge scheduler triggers the cleanupOpenPowerlifitngData function which will ensure the S3 bucket file versions and the DynamoDB versions are in sync. It will then delete any old file and database versions.
+
+### Contact
+##### [Send Contact Me Message](/backend/api/sendContactMeMessage.py)
+![image](https://github.com/jschwartz55/jakeshape-public/assets/78443999/5f14d771-4529-478e-895d-53dc2600fcfa)
+
+I am subscribed to an SNS topic. SendContactMeMessage posts to the topic so I receive an email with the contents of the request.
+
+
