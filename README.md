@@ -1,8 +1,8 @@
 # jakeshape-public
 
-This repo is not comprehensive. It provides a general understanding of how jakeshape.com works. The actual repo for the site is private.
+This repo is not comprehensive. It provides a general understanding of how https://www.jakeshape.com works. The actual repo for the site is private.
 
-This site would not be possible without www.openpowerlifting.org. Make sure to check out the website.
+This site would not be possible without https://www.openpowerlifting.org. Make sure to check out the website.
 
 Last Updated: 9/28/2023
 
@@ -26,7 +26,7 @@ The lambda function will continue running in the background if a timeout occurs.
 
 ![image](https://github.com/jschwartz55/jakeshape-public/assets/78443999/004c5629-37ac-4dc0-af12-2c9d125ff557)
 
-When a request is made to get a prediction, getPerformancePrediction is called. The predictions are made by an XGBoost model. You can see details in the /backend/predictionModels folder. getPerformancePrediction checks the open powerlifting database for the open powerlifting ID. If found, all previous meets for that lifter are retrieved. Some feature engineering is performed and sent to the Sagemaker prediction endpoints. The predictions are then returned.
+When a request is made to get a prediction, getPerformancePrediction is called. The predictions are made by an XGBoost model. You can see details in the [Prediction Models](/backend/predictionModels) folder. getPerformancePrediction checks the open powerlifting database for the open powerlifting ID. If found, all previous meets for that lifter are retrieved. Some feature engineering is performed and sent to the Sagemaker prediction endpoints. The predictions are then returned.
 
 #### Power Percentile
 ##### [Get Power Percentile](/backend/api/getPowerPercentile.py)
