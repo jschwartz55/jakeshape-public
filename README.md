@@ -4,6 +4,8 @@ This repo is not comprehensive. It provides a general understanding of how https
 
 This site would not be possible without https://www.openpowerlifting.org. Make sure to check out the website.
 
+The frontend was built with typescript and react. The backend was built with AWS.
+
 Last Updated: 9/28/2023
 
 ### Tools
